@@ -26,14 +26,12 @@ public class Main {
 //                e.printStackTrace();
 //            }
 //        }
-
+//
+//
 //        CheckingFiles checkingFiles = new CheckingFiles(folderOut);
 //        Thread thread = new Thread(checkingFiles);
 //        thread.start();
-//        checkFile(directory);
-//        for (File file : allTheFiles) {
-//            System.out.println(file.getAbsoluteFile());
-//        }
+
         /**
          * @directory - the directory where you want to search the files with the same name
          * @name - the name of the searched files

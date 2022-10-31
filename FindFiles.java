@@ -4,15 +4,16 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class FindFiles implements Runnable {
-    private File directory;
+    private File[] directory;
     private Thread thread;
     private String name;
     private ArrayList<File> allTheFiles;
 
-    public FindFiles(File directory, String name) {
+
+    public FindFiles(File[] directory, String name) {
         this.directory = directory;
         this.name = name;
-        allTheFiles = new ArrayList<File>();
+        allTheFiles = new ArrayList<>();
         thread = new Thread(this);
         thread.start();
     }
@@ -52,6 +53,17 @@ public class FindFiles implements Runnable {
 
     @Override
     public void run() {
-        checkFile(directory);
+        for (int i = 0; i < directory.length; i++) {
+            if (directory[i] != null) {
+                if (directory[i].isFile()) {
+                    if (equalName(directory[i])) {
+                        allTheFiles.add(directory[i]);
+                    }
+                } else {
+                    checkFile(directory[i]);
+                }
+                System.out.println(thread.getName() + ":  " + directory[i]);
+            }
+        }
     }
 }

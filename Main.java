@@ -37,7 +37,7 @@ public class Main {
          * @name - the name of the searched files
          */
 
-        File directory = new File("C:\\Users\\User\\IdeaProjects\\ProgAcademy\\untitled\\src");
+        File directory = new File("C:\\Users\\User");
         String name = "ddd.txt";
 
         ListDirectory.createThreads(directory, name);
